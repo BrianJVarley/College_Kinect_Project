@@ -1,0 +1,30 @@
+﻿<Window x:Class="KinectKickboxingBVversion1.ConditioningFrm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ConditioningFrm"  Height="377.612" Width="637.31" Loaded="Window_Loaded">
+    <Grid>
+
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="pushUpBtn" Background="BlueViolet" Content="Push Ups" Width="100" Height="50" Click="pushUpBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="burpeeBtn" Background="BlueViolet" Content="Burpee" Width="100" Height="50" Click="burpeeBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="squatBtn" Background="BlueViolet" Content="Squat" Width="100" Height="50" Click="squatBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="coreBtn" Background="BlueViolet" Content="Core" Width="100" Height="50" Click="coreBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+        </StackPanel>
+        <Viewbox Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Center">
+            <Image x:Name="KinectVideo" Width="640" Height="250" Visibility="Visible" Stretch="Fill"/>
+            
+            
+        </Viewbox>
+
+        <Button x:Name="homeBtn" Content="" Width="50" Click="homeBtn_Click" Height="35" Margin="272,294,277,10" >
+
+            <Button.Background>
+
+                <ImageBrush ImageSource="Images/ContentIcon.png" />
+
+            </Button.Background>
+
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+﻿<Window x:Class="KinectKickboxingBVversion1.TrainingFrm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TrainingFrm" Height="377.612" Width="637.313" Loaded="Window_Loaded">
+
+    <Grid>
+
+        <StackPanel Orientation="Horizontal" >
+            <Button x:Name="jabBtn" Background="BlueViolet"  Content="Jab" Width="100" Height="50" Click="jabBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="crossBtn" Background="BlueViolet" Content="Cross" Width="100" Height="50" Click="crossBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="jabCrossHookBtn" Background="BlueViolet" Content="Jab-Cross-Hook" Width="100" Height="50" Click="jabCrossHookBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Button x:Name="pKickBtn" Content="Push Kick" Background="BlueViolet" Width="100" Height="50" Click="pKickBtn_Click" HorizontalAlignment=" Center" VerticalAlignment="Top"/>
+            <Button x:Name="blockBtn"  Content="Kick Block" Background="BlueViolet" Width="100" Height="50" Click="blockBtn_Click" HorizontalAlignment=" Center" VerticalAlignment="Top"/>
+            <Label Content="SCORE: " x:Name="lblScore" Visibility="Collapsed"/>
+            <TextBlock x:Name="tblkScore" />
+        </StackPanel>
+        <Viewbox Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Center">
+            
+            <Image x:Name="KinectVideo" Width="640" Height="250" Visibility="Visible" Stretch="Fill" /> 
+            
+        </Viewbox>
+        
+
+        <Button x:Name="homeBtn" Content="" Width="50" Click="homeBtn_Click" Height="35" Margin="272,294,277,10" >
+
+            <Button.Background>
+
+                <ImageBrush ImageSource="Images/ContentIcon.png" />
+
+            </Button.Background>
+
+        </Button>
+    </Grid>
+</Window>
