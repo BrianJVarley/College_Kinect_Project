@@ -17,7 +17,7 @@
             
         </Viewbox>
 
-        <Button x:Name="homeBtn" Content="" Width="50" Click="homeBtn_Click" Height="35" Margin="272,294,277,10" >
+        <Button x:Name="homeBtn" Content="" Width="50" Click="homeBtn_Click" Height="35" Margin="272,294,277,10" HorizontalAlignment="Center" VerticalAlignment="Bottom" >
 
             <Button.Background>
 

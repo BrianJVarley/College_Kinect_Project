@@ -4,24 +4,32 @@
         Title="TrainingFrm" Height="377.612" Width="637.313" Loaded="Window_Loaded">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-        <StackPanel Orientation="Horizontal" >
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Height="55"  >
             <Button x:Name="jabBtn" Background="BlueViolet"  Content="Jab" Width="100" Height="50" Click="jabBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Button x:Name="crossBtn" Background="BlueViolet" Content="Cross" Width="100" Height="50" Click="crossBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Button x:Name="jabCrossHookBtn" Background="BlueViolet" Content="Jab-Cross-Hook" Width="100" Height="50" Click="jabCrossHookBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Button x:Name="pKickBtn" Content="Push Kick" Background="BlueViolet" Width="100" Height="50" Click="pKickBtn_Click" HorizontalAlignment=" Center" VerticalAlignment="Top"/>
             <Button x:Name="blockBtn"  Content="Kick Block" Background="BlueViolet" Width="100" Height="50" Click="blockBtn_Click" HorizontalAlignment=" Center" VerticalAlignment="Top"/>
             <Label Content="SCORE: " x:Name="lblScore" Visibility="Collapsed"/>
+            <Label Content=".." x:Name="lblGestureMatch" Visibility="Visible"/>
             <TextBlock x:Name="tblkScore" />
         </StackPanel>
-        <Viewbox Grid.Row="1" Stretch="Uniform" HorizontalAlignment="Center">
-            
-            <Image x:Name="KinectVideo" Width="640" Height="250" Visibility="Visible" Stretch="Fill" /> 
-            
-        </Viewbox>
-        
 
-        <Button x:Name="homeBtn" Content="" Width="50" Click="homeBtn_Click" Height="35" Margin="272,294,277,10" >
+        <Grid HorizontalAlignment="Center" Grid.Row="1" Width="800" >
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/Boxingbags.jpg" x:Name="KinectVideo" Opacity="0.3" />
+            </Grid.Background>
+            <Image Source="Images/Boxbag.png"/>
+            
+        </Grid>
+
+
+        <!--<Button x:Name="homeBtn" Panel.ZIndex="5" Content="" Width="50" Click="homeBtn_Click" Height="35" Margin="272,294,277,10" HorizontalAlignment="Center" VerticalAlignment="Bottom" >
 
             <Button.Background>
 
@@ -29,6 +37,6 @@
 
             </Button.Background>
 
-        </Button>
+        </Button>-->
     </Grid>
 </Window>

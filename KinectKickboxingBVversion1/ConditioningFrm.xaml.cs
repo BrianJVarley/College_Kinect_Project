@@ -16,7 +16,7 @@ using Microsoft.Speech;
 using Microsoft.Speech.AudioFormat;
 using Microsoft.Speech.Recognition;
 using System.Windows.Resources;
-using GestureDetector;
+
 
 
 using System.IO;
