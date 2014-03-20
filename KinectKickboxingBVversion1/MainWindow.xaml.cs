@@ -75,63 +75,13 @@ namespace KinectKickboxingBVversion1
             var regionSensorBinding = new Binding("Kinect") { Source = this._sensorChooser };
             BindingOperations.SetBinding(this.kinectRegion, KinectRegion.KinectSensorProperty, regionSensorBinding);
 
-            // Clear out placeholder content
-            this.wrapPanel.Children.Clear();
-
-            // Add in display content
-            for (var index = 0; index < 300; ++index)
-            {
-                var button = new KinectTileButton { Label = (index + 1).ToString(CultureInfo.CurrentCulture) };
-                this.wrapPanel.Children.Add(button);
-            }
-
         }
 
         #endregion
 
 
         #region Events
-        /// <summary>
-        /// Handle a button click from the wrap panel.
-        /// </summary>
-        /// <param name="sender">Event sender</param>
-        /// <param name="e">Event arguments</param>
         
-        /*
-        private void KinectTileButtonClick(object sender, RoutedEventArgs e)
-        {
-            var button = (KinectTileButton)e.OriginalSource;
-            e.Handled = true;
-        }
-
-        /// <summary>
-        /// Handle paging right (next button).
-        /// </summary>
-        /// <param name="sender">Event sender</param>
-        /// <param name="e">Event arguments</param>
-        /*
-        private void PageRightButtonClick(object sender, RoutedEventArgs e)
-        {
-            scrollViewer.ScrollToHorizontalOffset(scrollViewer.HorizontalOffset + PixelScrollByAmount);
-            /*
-             * var newForm = new TrainingFrm(); //create your new form.
-            newForm.Show(); //show the new form.
-            this.Close(); //only if you want to close the current form.
-             
-            
-        }
-
-        /// <summary>
-        /// Handle paging left (previous button).
-        /// </summary>
-        /// <param name="sender">Event sender</param>
-        /// <param name="e">Event arguments</param>
-        private void PageLeftButtonClick(object sender, RoutedEventArgs e)
-        {
-            scrollViewer.ScrollToHorizontalOffset(scrollViewer.HorizontalOffset - PixelScrollByAmount);
-        }
-
-        */
 
         /// <summary>
         /// CLR Property Wrappers for PageLeftEnabledProperty

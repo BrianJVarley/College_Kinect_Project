@@ -161,7 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Boxbag.png" />
-    <Resource Include="Gestures\jab.xml" />
     <Content Include="KinectInteraction180_32.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
