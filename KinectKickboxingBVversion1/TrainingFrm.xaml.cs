@@ -458,11 +458,13 @@ namespace KinectKickboxingBVversion1
             scoreCntr++;
 
             PlaySound();
+            
             /*
             SoundPlayer player = new SoundPlayer("Sounds/computer.wav");
             player.Load();
             player.Play();
-            */
+             */
+            
             lblScoreCntr.Content = scoreCntr;
         
         }
