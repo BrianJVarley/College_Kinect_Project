@@ -8,8 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("kinectinteraction180_32.dll")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("kinectinteraction180_64.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/123sound.wav")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/jabsound.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/kicksound.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sounds/cross.wav")]
 
