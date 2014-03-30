@@ -16,8 +16,7 @@
             <Button x:Name="jabCrossHookBtn" Background="BlueViolet" Content="Jab-Cross-Hook" Width="100" Height="50" Click="jabCrossHookBtn_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Button x:Name="pKickBtn" Content="Push Kick" Background="BlueViolet" Width="100" Height="50" Click="pKickBtn_Click" HorizontalAlignment=" Center" VerticalAlignment="Top"/>
             <Button x:Name="blockBtn"  Content="Kick Block" Background="BlueViolet" Width="100" Height="50" Click="blockBtn_Click" HorizontalAlignment=" Center" VerticalAlignment="Top"/>
-            
-            <TextBlock x:Name="tblkScore" />
+            <Button x:Name="SpeechListenBtn"  Content="Listen" Background="BlueViolet" Width="100" Height="50" Click="SpeechListenBtn_Click" HorizontalAlignment=" Center" VerticalAlignment="Top"/>
         </StackPanel>
 
         <Grid HorizontalAlignment="Center" Grid.Row="1" Width="600"  >
@@ -26,9 +25,11 @@
             </Grid.Background>
             <Label Content="..." x:Name="lblGestureMatch" FontSize="55" Visibility="Visible"/>
             <Image Source="Images/Boxbag.png" Width="Auto" Height="Auto"/>
-            <Label Content="SCORE: " x:Name="lblScore" FontSize="30" Margin="10,70,10,70" Visibility="Visible"/>
-            <Label Content="... " x:Name="lblScoreCntr" FontSize="30" Margin="120,70,350,180" Visibility="Visible"/>
+            <Label Content="SCORE: " x:Name="lblScore" FontSize="30" Margin="10,100,10,70" Visibility="Visible"/>
+            <Label Content="... " x:Name="lblScoreCntr" FontSize="50" Margin="120,80,350,149" Visibility="Visible"/>
             <Image Name="KinectSkeletonFeed" Margin="348,70,35,70"/>
+            <TextBox HorizontalAlignment="Left" x:Name="PhrasesTextBox" Visibility="Collapsed" Height="23" Margin="421,143,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBlock HorizontalAlignment="Left" x:Name="HeardTextBlock" Visibility="Collapsed" Margin="421,227,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
 
         </Grid>
         

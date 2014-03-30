@@ -18,6 +18,8 @@ using Microsoft.Speech.AudioFormat;
 using Microsoft.Speech.Recognition;
 using System.IO;
 using GesturePak;
+using System.Media;
+
 
 namespace KinectKickboxingBVversion1
 {
@@ -32,6 +34,11 @@ namespace KinectKickboxingBVversion1
 
         RecognizerInfo kinectRecognizerInfo;
         KinectSensor myKinect = null;
+
+        SpeechTools.SpeechListener listener = null;
+
+        // set properties: Build Action = None, Copy to Output Directory = Copy Always
+        string WakeUpWavFile = "computer.wav";
 
         private const float RenderWidth = 640.0f;
         private const float RenderHeight = 480.0f;
@@ -49,14 +56,27 @@ namespace KinectKickboxingBVversion1
         #endregion
 
         // Path to gesture. Point this to any GesturePak created gesture
-        private string gesturefile =
-            Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\GesturePak\\wave.xml";
+        /*
+         private string gesturefile =
+         Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\GesturePak\\wave.xml";
+        */
+
+        //pointing to gesture file in project folder instead of machine
+         private string gesturefile = System.IO.Path.Combine(Environment.CurrentDirectory, @"Gesture\wave.xml");
 
          public TrainingFrm()
         {
             
-            InitializeComponent();
+            InitializeComponent();  
+            listener = new SpeechTools.SpeechListener();
+            listener.SpeechRecognized += listener_SpeechRecognized;
+            this.PhrasesTextBox.Text = "Go Home\nThis is cool\nIs it lunch time yet?\nLet's Party";
+
+            
+               
         }
+
+        
 
         #region drawing skeleton
 
@@ -264,14 +284,21 @@ namespace KinectKickboxingBVversion1
 
 
          #region methods
-
-         private void PlaySound()
+         
+        private void PlaySound()
         {
-            Uri uri = new Uri(@"pack://application:,,,/Sounds/jabSound.wav");
+            Uri uri = new Uri("../../Sounds/jabSound.wav", UriKind.Relative);
             var player = new MediaPlayer();
+            player.MediaFailed += (o, args) =>
+            {
+                //here you can get hint of what causes the failure 
+                //from method parameter args 
+            };
             player.Open(uri);
             player.Play();
         }
+        
+        
 
         #endregion
 
@@ -284,6 +311,13 @@ namespace KinectKickboxingBVversion1
             var newForm = new MainWindow(); //create your new form.
             newForm.Show(); //show the new form.
             this.Close(); //only if you want to close the current form.
+        }
+
+        private void SpeechListenBtn_Click(object sender, RoutedEventArgs e)
+        {
+           
+               
+            
         }
 
         private void jabBtn_Click(object sender, RoutedEventArgs e)
@@ -319,6 +353,10 @@ namespace KinectKickboxingBVversion1
         
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            // set the phrases to listen for and start listening
+            listener.Phrases = PhrasesTextBox.Text;
+            listener.StartListening();
+
             // Make sure we have a Kinect
 		    if (KinectSensor.KinectSensors.Count == 0) {
 			    MessageBox.Show("Please plug in your Kinect and try again");
@@ -358,6 +396,7 @@ namespace KinectKickboxingBVversion1
             SkeletonInitilization();
 
             
+           
             
         }
 
@@ -414,9 +453,18 @@ namespace KinectKickboxingBVversion1
 
         void matcher_GestureMatch(Gesture gesture)
         {
+            int scoreCntr = 0;
             lblGestureMatch.Content = gesture.Name;
-            PlaySound();
+            scoreCntr++;
 
+            PlaySound();
+            /*
+            SoundPlayer player = new SoundPlayer("Sounds/computer.wav");
+            player.Load();
+            player.Play();
+            */
+            lblScoreCntr.Content = scoreCntr;
+        
         }
 
         void matcher_NotTracking()
@@ -443,9 +491,24 @@ namespace KinectKickboxingBVversion1
             lblGestureMatch.Content = "Watching...";
         }
 
+        void listener_SpeechRecognized(object sender, System.Speech.Recognition.SpeechRecognizedEventArgs e)
+        {
+            // Fires when a phrase is recognized
+            HeardTextBlock.Text = DateTime.Now.ToLongTimeString() + ": " + e.Result.Text;
+
+            //when "Home" recognized, navigate to Home screen
+            var newForm = new MainWindow(); //create your new form.
+            newForm.Show(); //show the new form.
+            this.Close(); //only if you want to close the current form.
+
+            
+        }
+
         
      
         #endregion
+
+        
 
     }
 }

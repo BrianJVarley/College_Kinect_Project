@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,9 +49,9 @@ namespace KinectKickboxingBVversion1
         private const double BodyCenterThickness = 10;
         private const double ClipBoundsThickness = 10;
         private readonly Brush centerPointBrush = Brushes.Blue;
-        private readonly Brush trackedJointBrush = new SolidColorBrush(Color.FromArgb(255, 68, 192, 68));    
+        private readonly Brush trackedJointBrush = new SolidColorBrush(Color.FromArgb(255, 68, 192, 68));
         private readonly Brush inferredJointBrush = Brushes.Yellow;
-        private readonly Pen trackedBonePen = new Pen(Brushes.Green, 6);      
+        private readonly Pen trackedBonePen = new Pen(Brushes.Green, 6);
         private readonly Pen inferredBonePen = new Pen(Brushes.Gray, 1);
         private KinectSensor sensor;
         private DrawingGroup drawingGroup;
@@ -81,7 +81,7 @@ namespace KinectKickboxingBVversion1
 
 
         #region Events
-        
+
 
         /// <summary>
         /// CLR Property Wrappers for PageLeftEnabledProperty
@@ -115,7 +115,7 @@ namespace KinectKickboxingBVversion1
             }
         }
 
-       
+
         /// <summary>
         /// Execute shutdown tasks
         /// </summary>
@@ -381,28 +381,30 @@ namespace KinectKickboxingBVversion1
         #endregion
 
         #region Button click events
+
+        private void conditioningBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var newForm = new ConditioningFrm(); //create your new form.
+            newForm.Show(); //show the new form.
+            this.Close(); //only if you want to close the current form.
+        }
+
         private void trainingBtn_Click(object sender, RoutedEventArgs e)
         {
             var newForm = new TrainingFrm(); //create your new form.
             newForm.Show(); //show the new form.
             this.Close(); //only if you want to close the current form.
+
         }
 
-        private void conditioningBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var newForm = new ConditioningFrm(); //create your new form.        
-            newForm.Show(); //show the new form.
-            this.Close(); //only if you want to close the current form.
-        }
-
-        #endregion 
+        #endregion
         #region Window Load Event
         /// <summary>
         /// Execute startup tasks
         /// </summary>
         /// <param name="sender">object sending the event</param>
         /// <param name="e">event arguments</param>
-        
+
 
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -455,9 +457,11 @@ namespace KinectKickboxingBVversion1
 
         }
 
-#endregion
+        #endregion
 
-       
+        
+
+
 
     }
 
