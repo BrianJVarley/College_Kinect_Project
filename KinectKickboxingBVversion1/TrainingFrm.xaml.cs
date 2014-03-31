@@ -291,8 +291,7 @@ namespace KinectKickboxingBVversion1
             var player = new MediaPlayer();
             player.MediaFailed += (o, args) =>
             {
-                //here you can get hint of what causes the failure 
-                //from method parameter args 
+                lblMediaFail.Content = "Media FAIL!";
             };
             player.Open(uri);
             player.Play();
@@ -458,6 +457,8 @@ namespace KinectKickboxingBVversion1
             scoreCntr++;
 
             PlaySound();
+
+            
             
             /*
             SoundPlayer player = new SoundPlayer("Sounds/computer.wav");

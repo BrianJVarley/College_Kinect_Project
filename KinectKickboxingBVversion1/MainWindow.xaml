@@ -63,7 +63,7 @@
 
             <Grid Grid.Row="0"  Margin="10 0 10 20">
 
-                <k:KinectUserViewer k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="100" HorizontalAlignment="Center" VerticalAlignment="Top" />
+                <k:KinectUserViewer k:KinectRegion.KinectRegion="{Binding ElementName=kinectRegion}" Height="100" Margin="10,30,490,10" VerticalAlignment="Top" />
                 <k:KinectSensorChooserUI HorizontalAlignment="Center" VerticalAlignment="Top" Name="sensorChooserUi" />
                 
             </Grid>

@@ -19,8 +19,7 @@ using Microsoft.Speech.Recognition;
 using System.Windows.Resources;
 using Microsoft.Kinect.Toolkit;
 using Microsoft.Kinect.Toolkit.Controls;
-//using GestureDetector;
-//using KinectMouseController;
+
 
 using System.IO;
 using System.Globalization;
@@ -35,11 +34,7 @@ namespace KinectKickboxingBVversion1
         #region Local Variables
         private readonly KinectSensorChooser _sensorChooser;
 
-        public static readonly DependencyProperty PageLeftEnabledProperty = DependencyProperty.Register(
-            "PageLeftEnabled", typeof(bool), typeof(MainWindow), new PropertyMetadata(false));
-
-        public static readonly DependencyProperty PageRightEnabledProperty = DependencyProperty.Register(
-            "PageRightEnabled", typeof(bool), typeof(MainWindow), new PropertyMetadata(false));
+       
 
         private const double ScrollErrorMargin = 0.001;
         private const int PixelScrollByAmount = 20;
@@ -83,38 +78,7 @@ namespace KinectKickboxingBVversion1
         #region Events
 
 
-        /// <summary>
-        /// CLR Property Wrappers for PageLeftEnabledProperty
-        /// </summary>
-        public bool PageLeftEnabled
-        {
-            get
-            {
-                return (bool)GetValue(PageLeftEnabledProperty);
-            }
-
-            set
-            {
-                this.SetValue(PageLeftEnabledProperty, value);
-            }
-        }
-
-        /// <summary>
-        /// CLR Property Wrappers for PageRightEnabledProperty
-        /// </summary>
-        public bool PageRightEnabled
-        {
-            get
-            {
-                return (bool)GetValue(PageRightEnabledProperty);
-            }
-
-            set
-            {
-                this.SetValue(PageRightEnabledProperty, value);
-            }
-        }
-
+        
 
         /// <summary>
         /// Execute shutdown tasks

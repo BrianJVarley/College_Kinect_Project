@@ -27,6 +27,7 @@
             <Image Source="Images/Boxbag.png" Width="Auto" Height="Auto"/>
             <Label Content="SCORE: " x:Name="lblScore" FontSize="30" Margin="10,100,10,70" Visibility="Visible"/>
             <Label Content="... " x:Name="lblScoreCntr" FontSize="50" Margin="120,80,350,149" Visibility="Visible"/>
+            <Label Content="... " x:Name="lblMediaFail" FontSize="50" Margin="50,160,300,110" Visibility="Visible"/>
             <Image Name="KinectSkeletonFeed" Margin="348,70,35,70"/>
             <TextBox HorizontalAlignment="Left" x:Name="PhrasesTextBox" Visibility="Collapsed" Height="23" Margin="421,143,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
             <TextBlock HorizontalAlignment="Left" x:Name="HeardTextBlock" Visibility="Collapsed" Margin="421,227,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top"/>
